@@ -1,0 +1,5 @@
+outs:
+- md5: 0412e71591d2a5561be2b0248deb9c9d
+  size: 354071
+  hash: md5
+  path: Pipfile.lock

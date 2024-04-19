@@ -1,0 +1,5 @@
+outs:
+- md5: 328d4a4690f91ec94b6bb6faadad5374
+  size: 387
+  hash: md5
+  path: Pipfile
