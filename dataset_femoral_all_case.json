@@ -1,0 +1,380 @@
+ {
+    "description": "btcv yucheng",
+    "labels": {
+        "0": "background",
+        "1": "Femoral_artery"
+
+    
+    },
+    "licence": "yt",
+    "modality": {
+        "0": "CT"
+    },
+    "name": "image",
+    "numtrain": 88,
+    "numTraining": 80,
+    "reference": "Vanderbilt University",
+    "release": "1.0 06/08/2015",
+    "tensorImageSize": "3D",
+  
+    "training": [
+        {
+            "image": "nii/6/6_image.nii.gz",
+            "label": "nii/6/6_label.nii.gz"
+        },
+        {
+            "image": "nii/7/7_image.nii.gz",
+            "label": "nii/7/7_label.nii.gz"
+        },
+        {
+            "image": "nii/8/8_image.nii.gz",
+            "label": "nii/8/8_label.nii.gz"
+        },
+        {
+            "image": "nii/9/9_image.nii.gz",
+            "label": "nii/9/9_label.nii.gz"
+        },
+        {
+            "image": "nii/10/10_image.nii.gz",
+            "label": "nii/10/10_label.nii.gz"
+        },
+        {
+            "image": "nii/11/11_image.nii.gz",
+            "label": "nii/11/11_label.nii.gz"
+        },
+        {
+            "image": "nii/12/12_image.nii.gz",
+            "label": "nii/12/12_label.nii.gz"
+        },
+        {
+            "image": "nii/13/13_image.nii.gz",
+            "label": "nii/13/13_label.nii.gz"
+        },
+        {
+            "image": "nii/14/14_image.nii.gz",
+            "label": "nii/14/14_label.nii.gz"
+        },
+        {
+            "image": "nii/15/15_image.nii.gz",
+            "label": "nii/15/15_label.nii.gz"
+        },
+        {
+            "image": "nii/16/16_image.nii.gz",
+            "label": "nii/16/16_label.nii.gz"
+        },
+        {
+            "image": "nii/17/17_image.nii.gz",
+            "label": "nii/17/17_label.nii.gz"
+        },
+        {
+            "image": "nii/18/18_image.nii.gz",
+            "label": "nii/18/18_label.nii.gz"
+        },
+        {
+            "image": "nii/19/19_image.nii.gz",
+            "label": "nii/19/19_label.nii.gz"
+        },
+        {
+            "image": "nii/20/20_image.nii.gz",
+            "label": "nii/20/20_label.nii.gz"
+        },
+        {
+            "image": "nii/21/21_image.nii.gz",
+            "label": "nii/21/21_label.nii.gz"
+        },
+        {
+            "image": "nii/22/22_image.nii.gz",
+            "label": "nii/22/22_label.nii.gz"
+        },
+        {
+            "image": "nii/23/23_image.nii.gz",
+            "label": "nii/23/23_label.nii.gz"
+        },
+        {
+            "image": "nii/24/24_image.nii.gz",
+            "label": "nii/24/24_label.nii.gz"
+        },
+        {
+            "image": "nii/25/25_image.nii.gz",
+            "label": "nii/25/25_label.nii.gz"
+        },
+        {
+            "image": "nii/26/26_image.nii.gz",
+            "label": "nii/26/26_label.nii.gz"
+        },
+        {
+            "image": "nii/27/27_image.nii.gz",
+            "label": "nii/27/27_label.nii.gz"
+        },
+        {
+            "image": "nii/28/28_image.nii.gz",
+            "label": "nii/28/28_label.nii.gz"
+        },
+        {
+            "image": "nii/29/29_image.nii.gz",
+            "label": "nii/29/29_label.nii.gz"
+        },
+        {
+            "image": "nii/30/30_image.nii.gz",
+            "label": "nii/30/30_label.nii.gz"
+        },
+        {
+            "image": "nii/31/31_image.nii.gz",
+            "label": "nii/31/31_label.nii.gz"
+        },
+        {
+            "image": "nii/32/32_image.nii.gz",
+            "label": "nii/32/32_label.nii.gz"
+        },
+        {
+            "image": "nii/33/33_image.nii.gz",
+            "label": "nii/33/33_label.nii.gz"
+        },
+        {
+            "image": "nii/34/34_image.nii.gz",
+            "label": "nii/34/34_label.nii.gz"
+        },
+        {
+            "image": "nii/35/35_image.nii.gz",
+            "label": "nii/35/35_label.nii.gz"
+        },
+        {
+            "image": "nii/36/36_image.nii.gz",
+            "label": "nii/36/36_label.nii.gz"
+        },
+        {
+            "image": "nii/37/37_image.nii.gz",
+            "label": "nii/37/37_label.nii.gz"
+        },
+        {
+            "image": "nii/38/38_image.nii.gz",
+            "label": "nii/38/38_label.nii.gz"
+        },
+        {
+            "image": "nii/39/39_image.nii.gz",
+            "label": "nii/39/39_label.nii.gz"
+        },
+        {
+            "image": "nii/40/40_image.nii.gz",
+            "label": "nii/40/40_label.nii.gz"
+        },
+        {
+            "image": "nii/41/41_image.nii.gz",
+            "label": "nii/41/41_label.nii.gz"
+        },
+        {
+            "image": "nii/42/42_image.nii.gz",
+            "label": "nii/42/42_label.nii.gz"
+        },
+        {
+            "image": "nii/43/43_image.nii.gz",
+            "label": "nii/43/43_label.nii.gz"
+        },
+        {
+            "image": "nii/44/44_image.nii.gz",
+            "label": "nii/44/44_label.nii.gz"
+        },
+        {
+            "image": "nii/45/45_image.nii.gz",
+            "label": "nii/45/45_label.nii.gz"
+        },
+        {
+            "image": "nii/46/46_image.nii.gz",
+            "label": "nii/46/46_label.nii.gz"
+        },
+        {
+            "image": "nii/47/47_image.nii.gz",
+            "label": "nii/47/47_label.nii.gz"
+        },
+        {
+            "image": "nii/48/48_image.nii.gz",
+            "label": "nii/48/48_label.nii.gz"
+        },
+        {
+            "image": "nii/49/49_image.nii.gz",
+            "label": "nii/49/49_label.nii.gz"
+        },
+        {
+            "image": "nii/50/50_image.nii.gz",
+            "label": "nii/50/50_label.nii.gz"
+        },
+        {
+            "image": "nii/52/52_image.nii.gz",
+            "label": "nii/52/52_label.nii.gz"
+        },
+        {
+            "image": "nii/54/54_image.nii.gz",
+            "label": "nii/54/54_label.nii.gz"
+        },
+        {
+            "image": "nii/55/55_image.nii.gz",
+            "label": "nii/55/55_label.nii.gz"
+        },
+        {
+            "image": "nii/56/56_image.nii.gz",
+            "label": "nii/56/56_label.nii.gz"
+        },
+        {
+            "image": "nii/57/57_image.nii.gz",
+            "label": "nii/57/57_label.nii.gz"
+        },
+        {
+            "image": "nii/58/58_image.nii.gz",
+            "label": "nii/58/58_label.nii.gz"
+        },
+        {
+            "image": "nii/59/59_image.nii.gz",
+            "label": "nii/59/59_label.nii.gz"
+        },
+        {
+            "image": "nii/60/60_image.nii.gz",
+            "label": "nii/60/60_label.nii.gz"
+        },
+        {
+            "image": "nii/69/69_image.nii.gz",
+            "label": "nii/69/69_label.nii.gz"
+        },
+        {
+            "image": "nii/71/71_image.nii.gz",
+            "label": "nii/71/71_label.nii.gz"
+        },
+        {
+            "image": "nii/72/72_image.nii.gz",
+            "label": "nii/72/72_label.nii.gz"
+        },
+        {
+            "image": "nii/76/76_image.nii.gz",
+            "label": "nii/76/76_label.nii.gz"
+        },
+        {
+            "image": "nii/77/77_image.nii.gz",
+            "label": "nii/77/77_label.nii.gz"
+        },
+        {
+            "image": "nii/78/78_image.nii.gz",
+            "label": "nii/78/78_label.nii.gz"
+        },
+        {
+            "image": "nii/79/79_image.nii.gz",
+            "label": "nii/79/79_label.nii.gz"
+        },
+        {
+            "image": "nii/80/80_image.nii.gz",
+            "label": "nii/80/80_label.nii.gz"
+        },
+        {
+            "image": "nii/81/81_image.nii.gz",
+            "label": "nii/81/81_label.nii.gz"
+        },
+        {
+            "image": "nii/82/82_image.nii.gz",
+            "label": "nii/82/82_label.nii.gz"
+        },
+        {
+            "image": "nii/83/83_image.nii.gz",
+            "label": "nii/83/83_label.nii.gz"
+        },
+        {
+            "image": "nii/84/84_image.nii.gz",
+            "label": "nii/84/84_label.nii.gz"
+        },
+        {
+            "image": "nii/85/85_image.nii.gz",
+            "label": "nii/85/85_label.nii.gz"
+        },
+        {
+            "image": "nii/86/86_image.nii.gz",
+            "label": "nii/86/86_label.nii.gz"
+        },
+        {
+            "image": "nii/87/87_image.nii.gz",
+            "label": "nii/87/87_label.nii.gz"
+        }
+        ,
+        {
+            "image": "nii/88/88_image.nii.gz",
+            "label": "nii/88/88_label.nii.gz"
+        },
+        {
+            "image": "nii/89/89_image.nii.gz",
+            "label": "nii/89/89_label.nii.gz"
+        }
+    ],
+    "validation": [
+        {
+            "image": "nii/90/90_image.nii.gz",
+            "label": "nii/90/90_label.nii.gz"
+        },
+        {
+            "image": "nii/91/91_image.nii.gz",
+            "label": "nii/91/91_label.nii.gz"
+        },
+        {
+            "image": "nii/92/92_image.nii.gz",
+            "label": "nii/92/92_label.nii.gz"
+        },
+        {
+            "image": "nii/93/93_image.nii.gz",
+            "label": "nii/93/93_label.nii.gz"
+        },
+        {
+            "image": "nii/94/94_image.nii.gz",
+            "label": "nii/94/94_label.nii.gz"
+        },
+        {
+            "image": "nii/95/95_image.nii.gz",
+            "label": "nii/95/95_label.nii.gz"
+        },
+        {
+            "image": "nii/96/96_image.nii.gz",
+            "label": "nii/96/96_label.nii.gz"
+        },
+        {
+            "image": "nii/97/97_image.nii.gz",
+            "label": "nii/97/97_label.nii.gz"
+        },
+        {
+            "image": "nii/99/99_image.nii.gz",
+            "label": "nii/99/99_label.nii.gz"
+        }
+
+    ],
+    "test": [
+        {
+            "image": "nii/98/98_image.nii.gz",
+            "label": "nii/98/98_label.nii.gz"
+        },
+        {
+            "image": "nii/100/100_image.nii.gz",
+            "label": "nii/100/100_label.nii.gz"
+        },
+        {
+            "image": "nii/114/114_image.nii.gz",
+            "label": "nii/114/114_label.nii.gz"
+        },
+        {
+            "image": "nii/115/115_image.nii.gz",
+            "label": "nii/115/115_label.nii.gz"
+        },
+        {
+            "image": "nii/116/116_image.nii.gz",
+            "label": "nii/116/116_label.nii.gz"
+        },
+        {
+            "image": "nii/117/117_image.nii.gz",
+            "label": "nii/117/117_label.nii.gz"
+        },
+        {
+            "image": "nii/118/118_image.nii.gz",
+            "label": "nii/118/118_label.nii.gz"
+        },
+        {
+            "image": "nii/119/119_image.nii.gz",
+            "label": "nii/119/119_label.nii.gz"
+        },
+        {
+            "image": "nii/120/120_image.nii.gz",
+            "label": "nii/120/120_label.nii.gz"
+        }
+    ]
+}
