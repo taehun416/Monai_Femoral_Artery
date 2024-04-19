@@ -1,0 +1,4 @@
+[core]
+    remote = femoral-artery-v1
+['remote "femoral-artery-v1"']
+    url = /data/femoral-artery/v1
