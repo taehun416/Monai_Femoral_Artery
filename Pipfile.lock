@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "572f9abee167eeaef29debf99094dafaf57f3c0a18766c2057bb2dd51c40f196"
+            "sha256": "a3f4ec2484fce9393dc5540fb1e4643cf3385077d51c3699f6d5dac7a3f81f8c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -2230,6 +2230,15 @@
             ],
             "markers": "python_full_version >= '3.8.0'",
             "version": "==2.2.2"
+        },
+        "torch-summary": {
+            "hashes": [
+                "sha256:44eac21777dbbda7b8404d57a43c09d83fd9c93d0c1f0c960b5083ccb24d6d21",
+                "sha256:6127efb631f34ba8cbd28e92e8f7ddc2903ea0cbc44c80f15b7363b8f558cd8c"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.6'",
+            "version": "==1.4.5"
         },
         "torchmetrics": {
             "hashes": [

@@ -14,7 +14,7 @@ def args_input():
     p = argparse.ArgumentParser(description='cmd parameters')
     ##common argument
     p.add_argument('--gpu_index', '-gpu_index', type=int, default=0)
-    p.add_argument('--defaults_path', '-defaults_path', type=str, default='/home/taehun/tae/2.Tutorial/1.MONAI_Spleen/monai_spleen_tutorial/')
+    p.add_argument('--defaults_path', '-defaults_path', type=str, default='/home/kanghyun/Monai_Femoral_Artery')
     p.add_argument('--model_name', '-model_name', type=str, default= 'UNet', help="model list of UNet, UNETR, SwinUNETR, UNet_Multiheader")
     p.add_argument('--loss_function_name', '-loss_function_name', type=str, default= 'DiceLoss', help="loss function list of DiceLoss, DiceCELoss, DiceFocalLoss, SoftclDiceLoss, FGDTMloss")
     p.add_argument('--optimizer_name', '-optimizer_name', type=str, default= 'Adam', help = 'optimizer list of Adam, AdamW')
@@ -30,7 +30,7 @@ def args_input():
     p.add_argument('--cache_num', '-cache_num', type=int, default= 30)
     p.add_argument('--num_samples', '-num_samples', type=int, default= 4)
     # p.add_argument('--split_json', '-split_json', type=str, default= 'dataset_spleen/dataset_spleen.json')
-    p.add_argument('--split_json', '-split_json', type=str, default= 'dataset_femoral/dataset_femoral_all_case.json')
+    p.add_argument('--split_json', '-split_json', type=str, default= 'data/femoral/dataset_femoral_all_case.json')
     p.add_argument('--max_iterations', '-max_iterations', type=int, default= 30000)
     p.add_argument('--eval_num', '-eval_num', type=int, default= 500)
     p.add_argument('--to_onehot', '-to_onehot', type=int, default= None)

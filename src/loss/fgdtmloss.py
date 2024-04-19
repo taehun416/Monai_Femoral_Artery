@@ -4,6 +4,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 from monai.networks import one_hot
+from monai.losses import DiceCELoss
+from monai.transforms.utils import distance_transform_edt # 나중에 사용 확인
 
 class FGDTMloss(nn.Module):
     def __init__(self, weight=None, size_average=True):
@@ -13,13 +15,13 @@ class FGDTMloss(nn.Module):
         """
         compute the distance transform map of foreground in binary mask
         input: segmentation, shape = (batch_size, x, y, z)
-        output: the foreground Distance Map (SDM) 
+        output: the foreground Distance Map (SDM)
         dtm(x) = 0; x in segmentation boundary
                 inf|x-y|; x in segmentation
         """
         fg_dtm = np.zeros(out_shape)
 
-        for b in range(out_shape[0]): # batch size
+        for b in range(out_shape[0]):  # batch size
             for c in range(out_shape[1]):
                 posmask = img_gt[b].astype(bool)
                 if posmask.any():
@@ -42,7 +44,7 @@ class FGDTMloss(nn.Module):
         targets = targets.contiguous().view(N, -1)
 
         intersection = (inputs * targets).sum(1)
-        dice = (2. * intersection + smooth) / (inputs.sum(1) + targets.sum(1) + smooth)
+        dice = (2.0 * intersection + smooth) / (inputs.sum(1) + targets.sum(1) + smooth)
 
         return 1 - dice.sum() / N
 
@@ -53,35 +55,34 @@ class FGDTMloss(nn.Module):
         weighted_diff = abs_diff * mask
         # Check if the mask is zero everywhere
         if torch.sum(mask) == 0:
-            return torch.tensor(0.0)  # Return zero loss if the mask has no valid elements
+            return torch.tensor(
+                0.0
+            )  # Return zero loss if the mask has no valid elements
         # Compute the average of the weighted differences
-        loss = torch.sum(weighted_diff) / torch.sum(mask)  # Normalize by the number of non-zero weights
+        loss = torch.sum(weighted_diff) / torch.sum(
+            mask
+        )  # Normalize by the number of non-zero weights
         return loss
 
-    def forward(self, outputs, outputs_dist, y, distance_map_weight, smooth=1):
-    # def forward(self, outputs: torch.Tensor, outputs_dist: torch.Tensor, y, distance_map_weight, smooth=1) -> torch.Tensor:
-
-        # comment out if your model contains a sigmoid or equivalent activation layer
-        assert isinstance(distance_map_weight, float), "distance_map_weight is not a float"
+    def forward(self, outputs, outputs_dist, y, distance_map_weight):
+        assert isinstance(
+            distance_map_weight, float
+        ), "distance_map_weight is not a float"
 
         n_pred_ch = outputs.shape[1]
-        y = one_hot(y, num_classes=n_pred_ch)
 
-        outputs = outputs[:,1:,:,:,:]
-        y = y[:,1:,:,:,:]
-        outputs_dist = outputs_dist[:,1:,:,:,:]
-
-        gt_dis = self.compute_dtm(y.cpu().numpy(), outputs_dist.shape)
-        gt_dis = torch.from_numpy(gt_dis).float().cuda()
+        # compute the distance map
+        y_dist = self.compute_dtm(y.cpu().numpy(), outputs_dist.shape)
+        y_dist = torch.from_numpy(y_dist).float().to(outputs.device)
         
-        loss_ce = F.binary_cross_entropy_with_logits(outputs, y)
-        loss_dice = self.dice_loss(outputs, y)
+        # convert y to one-hot
+        y_one_hot = one_hot(y, num_classes=n_pred_ch)
 
-        loss_dist = self.weighted_l1_loss(outputs_dist, gt_dis, y) 
+        # compute the dice-ce-loss
+        loss_dice_ce = DiceCELoss()(outputs, y_one_hot)
 
+        # compute the distance loss (weighted-l1-loss)
+        loss_dist = self.weighted_l1_loss(outputs_dist, y_dist, y)
 
-        loss = loss_ce + loss_dice + distance_map_weight * loss_dist
-
-
+        loss = loss_dice_ce + distance_map_weight * loss_dist
         return loss
-    

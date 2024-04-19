@@ -22,11 +22,15 @@ from monai.networks.layers.factories import Act, Norm
 from monai.networks.layers.simplelayers import SkipConnection
 from monai.utils import alias, export
 
+import autorootcwd
+from src.network.base_network import ModelRegistry
+
 __all__ = ["UNet", "Unet"]
 
 
 @export("monai.networks.nets")
 @alias("Unet")
+@ModelRegistry.register("UNet")
 class UNet(nn.Module):
     """
     Enhanced version of UNet which has residual units implemented with the ResidualUnit class.

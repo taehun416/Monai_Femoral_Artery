@@ -18,5 +18,5 @@ from .unetr import UNETR
 from .multi_head_3D_unet import MultiHeadUNet
 from .unet_imagecas import UnetImageCAS
 from .multiheader_swin_unetr import MultiHeaderSwinUNETR
-
+from .unet import UNet
 

@@ -16,6 +16,7 @@ monai = {extras = ["einops"], version = "*"}
 rootutils = "*"
 autoroot = "*"
 autorootcwd = "*"
+torch-summary = "*"
 
 [dev-packages]
 monai = {extras = ["all"], version = "*"}

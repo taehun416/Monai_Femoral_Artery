@@ -258,7 +258,7 @@ class MultiHeaderSwinUNETR(nn.Module):
         )
 
         self.out1 = UnetOutBlock(spatial_dims=spatial_dims, in_channels=feature_size, out_channels=out_channels)
-        self.out2 = UnetOutBlock(spatial_dims=spatial_dims, in_channels=feature_size, out_channels=out_channels)
+        self.out2 = UnetOutBlock(spatial_dims=spatial_dims, in_channels=feature_size, out_channels=1) # made distance map to have channel of 1
 
     def load_from(self, weights):
         with torch.no_grad():
@@ -337,6 +337,8 @@ class MultiHeaderSwinUNETR(nn.Module):
         
         seg = self.out1(out)
         dist = self.out2(out)
+        
+        assert dist.shape[1] == 1, f"Expected distance map to have 1 channel, got {dist.shape[1]}."
 
         if self.training:
             return seg, dist
