@@ -8,6 +8,8 @@ from src.data_loader.dataloader import TrainThreadDataloader, TrainDataloader
 from src.network.network_selector import NetworkSelector
 from src.loss.lossfunction_selector import LossFunctionSelector
 
+import autorootcwd
+
 def args_input():
     p = argparse.ArgumentParser(description='cmd parameters')
     ##common argument

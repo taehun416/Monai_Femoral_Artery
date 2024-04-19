@@ -13,6 +13,9 @@ nibabel = "*"
 dvc = "*"
 matplotlib = "*"
 monai = {extras = ["einops"], version = "*"}
+rootutils = "*"
+autoroot = "*"
+autorootcwd = "*"
 
 [dev-packages]
 monai = {extras = ["all"], version = "*"}
