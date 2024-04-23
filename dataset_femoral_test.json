@@ -1,0 +1,82 @@
+ {
+    "description": "btcv yucheng",
+    "labels": {
+        "0": "background",
+        "1": "Femoral_artery"
+
+    
+    },
+    "licence": "yt",
+    "modality": {
+        "0": "CT"
+    },
+    "name": "image",
+    "numtrain": 88,
+    "numTraining": 80,
+    "reference": "Vanderbilt University",
+    "release": "1.0 06/08/2015",
+    "tensorImageSize": "3D",
+  
+    "training": [
+        {
+            "image": "imagesTr/6_image.nii.gz",
+            "label": "labelsTr/6_label.nii.gz"
+        },
+        {
+            "image": "imagesTr/7_image.nii.gz",
+            "label": "labelsTr/7_label.nii.gz"
+        },
+        {
+            "image": "imagesTr/8_image.nii.gz",
+            "label": "labelsTr/8_label.nii.gz"
+        }
+    ],
+    "validation": [
+        {
+            "image": "imagesVal/90_image.nii.gz",
+            "label": "labelsVal/90_label.nii.gz"
+        },
+        {
+            "image": "imagesVal/91_image.nii.gz",
+            "label": "labelsVal/91_label.nii.gz"
+        }
+    ],
+    "test": [
+        {
+            "image": "imagesTst/98_image.nii.gz",
+            "label": "imagesTs/98_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/100_image.nii.gz",
+            "label": "imagesTs/100_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/114_image.nii.gz",
+            "label": "imagesTs/114_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/115_image.nii.gz",
+            "label": "imagesTs/115_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/116_image.nii.gz",
+            "label": "imagesTs/116_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/117_image.nii.gz",
+            "label": "imagesTs/117_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/118_image.nii.gz",
+            "label": "imagesTs/118_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/119_image.nii.gz",
+            "label": "imagesTs/119_label.nii.gz"
+        },
+        {
+            "image": "imagesTst/120_image.nii.gz",
+            "label": "imagesTs/120_label.nii.gz"
+        }
+    ]
+}
