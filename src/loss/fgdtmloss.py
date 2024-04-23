@@ -78,15 +78,15 @@ class FGDTMloss(nn.Module):
         y_one_hot = one_hot(y, num_classes=n_pred_ch)
 
         # compute the dice-ce-loss
-        # loss_dice_ce = DiceCELoss()(outputs, y_one_hot)
-        # loss_dist = self.weighted_l1_loss(outputs_dist, y_dist, y)
-        # loss = loss_dice_ce + distance_map_weight * loss_dist
+        loss_dice_ce = DiceCELoss()(outputs, y_one_hot)
+        loss_dist = self.weighted_l1_loss(outputs_dist, y_dist, y)
+        loss = loss_dice_ce + distance_map_weight * loss_dist
 
 ########################################################################################################################
-        loss_ce = F.cross_entropy(outputs, y_one_hot)
-        loss_dice = self.dice_loss(outputs, y_one_hot)
-        loss_dist = self.weighted_l1_loss(outputs_dist, y_dist, y)
-        loss = loss_ce + loss_dice + distance_map_weight * loss_dist
+        # loss_ce = F.cross_entropy(outputs, y_one_hot)
+        # loss_dice = self.dice_loss(outputs, y_one_hot)
+        # loss_dist = self.weighted_l1_loss(outputs_dist, y_dist, y)
+        # loss = loss_ce + loss_dice + distance_map_weight * loss_dist
 ########################################################################################################################
 
         return loss
