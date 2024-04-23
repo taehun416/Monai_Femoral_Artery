@@ -35,6 +35,7 @@ def args_input():
     ## distance_weight argument
     p.add_argument('--distance_map_weight', '-distance_map_weight', type=float, default= 1.0)
     p.add_argument('--dist_flag', '-dist_flag', type=int, default= 0)
+    p.add_argument('--valid_save_flag', '-valid_save_flag', type=int, default= 0)
 
     return p.parse_args()
 
@@ -58,6 +59,7 @@ if __name__ == '__main__':
     distance_map_weight = args.distance_map_weight
     set_determinism_seed = args.set_determinism_seed
     dist_flag = args.dist_flag
+    valid_save_flag = args.valid_save_flag
 
     os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu_index)
     torch.cuda.set_device(0)
@@ -83,24 +85,30 @@ if __name__ == '__main__':
         weight = torch.load("./model_swinvit.pt")
         model.load_from(weights=weight)
 
-    trainer = Trainer(model_name, model, loss_function_name, criterion, dist_flag, distance_map_weight, max_iterations, eval_num, optimizer_name, defaults_path, train_loader, val_loader, to_onehot).forward()
+    trainer = Trainer(model_name, model, loss_function_name, criterion, dist_flag, distance_map_weight, max_iterations, eval_num, optimizer_name, defaults_path, train_loader, val_loader, to_onehot, valid_save_flag).forward()
 
+    
 # ex) python train_test.py -model_name UNet -val_interval 1 -cache_rate 0.1 -gpu_index 0 -eval_num 1 -optimizer_name Adam -loss_function_name DiceLoss -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
-# ex) python train_test.py -model_name SwinUNETR_Multiheader -val_interval 1 -cache_rate 0.1 -gpu_index 0 -dist_flag 1 -eval_num 1 -optimizer_name Adam -loss_function_name FGDTMloss -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
+# ex) python train_test.py -model_name SwinUNETR_Multiheader -val_interval 1 -cache_rate 0.1 -gpu_index 0 -dist_flag 1 -eval_num 1 -optimizer_name Adam -loss_function_name FGDTMloss -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_TH.json'
 
 #UNet
 # ex) python train.py -model_name UNet -val_interval 1 -cache_rate 0.1 -optimizer_name Adam -loss_function_name DiceCELoss -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
-# python train.py -model_name UNet -optimizer_name Adam -loss_function_name DiceCELoss -gpu_index 0 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_femoral_all_case.json
+# python train.py -model_name UNet -optimizer_name Adam -loss_function_name DiceCELoss -gpu_index 0 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_TH.json
+
+#UNet_Multiheader
+# ex) python train.py -model_name UNet_Multiheader -val_interval 1 -cache_rate 0.1 -optimizer_name Adam -loss_function_name FGDTMloss -dist_flag 1 -gpu_index 2 -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
+# python train.py -model_name UNet_Multiheader -optimizer_name Adam -loss_function_name FGDTMloss -dist_flag 1 -gpu_index 2 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_TH.json
+
 
 #UNETR
 # ex) python train.py -model_name UNETR -cache_rate 0.1 -optimizer_name AdamW -eval_num 1 -loss_function_name DiceCELoss -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
-# python train.py -model_name UNETR -optimizer_name AdamW -loss_function_name DiceCELoss -gpu_index 1 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_femoral_all_case.json
+# python train.py -model_name UNETR -optimizer_name AdamW -loss_function_name DiceCELoss -gpu_index 1 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_TH.json
 
 #SwinUNETR
 # ex) python train.py -model_name SwinUNETR -cache_rate 0.1 -optimizer_name AdamW -eval_num 1 -loss_function_name DiceCELoss -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
-# python train.py -model_name SwinUNETR -optimizer_name AdamW -loss_function_name DiceCELoss -gpu_index 2 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_femoral_all_case.json
+# python train.py -model_name SwinUNETR -optimizer_name AdamW -loss_function_name DiceCELoss -gpu_index 2 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_TH.json
 
 #SwinUNETR_MultiHeader
-# ex) #python train.py -model_name SwinUNETR_Multiheader -val_interval 1 -cache_rate 0.1 -optimizer_name AdamW -loss_function_name FGDTMloss -dist_flag 1 -eval_num 1 -gpu_index 0 -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
-# python train.py -model_name SwinUNETR_Multiheader -optimizer_name AdamW -loss_function_name FGDTMloss -dist_flag 1 -gpu_index 0 -cache_num 70 -num_workers 8 -split_json dataset_femoral/dataset_femoral_all_case.json
+# ex) python train.py -model_name SwinUNETR_Multiheader -val_interval 1 -cache_rate 0.1 -optimizer_name AdamW -loss_function_name FGDTMloss -dist_flag 1 -eval_num 1 -gpu_index 2 -valid_save_flag 1 -cache_num 70 -num_workers 8 -split_json 'dataset_femoral/dataset_femoral_test.json'
+# python train.py -model_name SwinUNETR_Multiheader -optimizer_name AdamW -loss_function_name FGDTMloss -dist_flag 1 -gpu_index 2 -cache_num 70 -num_workers 8 -valid_save_flag 1 -split_json dataset_femoral/dataset_TH.json
 
