@@ -78,5 +78,5 @@ if __name__ == '__main__':
 
 ## ex) python test.py -model_name SwinUNETR -cache_num 9 -cache_rate 0.2 -loss_function_name DiceCELoss -save_flag 1 -evaluation_flag 1
 #python test.py -model_name SwinUNETR -cache_num 9 -cache_rate 1.0 -loss_function_name DiceCELoss -gpu_index 2 -overlap 0.25 -split_json dataset_femoral/dataset_femoral_all_case.json -inference_mode constant -save_flag 1 -evaluation_flag 1
-
+###
 
